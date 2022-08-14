@@ -64,11 +64,9 @@ final class TestTimeService implements TimeService
      */
     public function setCurrentTime(\DateTimeInterface|string $time): void
     {
-        if (is_string($time)) {
-            $time = new \DateTimeImmutable($time);
-        } else {
-            $time = new \DateTimeImmutable($time->format(DATE_RFC3339));
-        }
+        $time = is_string($time)
+            ? new \DateTimeImmutable($time)
+            : \DateTimeImmutable::createFromInterface($time);
 
         $this->currentTime = $time;
     }

@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Tests\Unit\Test;
 
-use PHPUnit\Framework\TestCase;
 use DobroSite\TimeService\Test\TestTimeService;
+use PHPUnit\Framework\TestCase;
 
 /**
  * @covers \DobroSite\TimeService\Test\TestTimeService
